@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { DocRenderer } from "../../types";
+import { DocRenderer } from "../..";
 
 const MSDocRenderer: DocRenderer = ({ mainState: { currentDocument } }) => {
   if (!currentDocument) return null;
@@ -11,7 +11,7 @@ const MSDocRenderer: DocRenderer = ({ mainState: { currentDocument } }) => {
         id="msdoc-iframe"
         title="msdoc-iframe"
         src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(
-          currentDocument.uri
+          currentDocument.uri,
         )}`}
         frameBorder="0"
       />
@@ -22,10 +22,12 @@ const MSDocRenderer: DocRenderer = ({ mainState: { currentDocument } }) => {
 export default MSDocRenderer;
 
 const MSDocFTMaps = {
+  odt: ["odt", "application/vnd.oasis.opendocument.text"],
   doc: ["doc", "application/msword"],
   docx: [
     "docx",
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "application/octet-stream",
   ],
   xls: ["xls", "application/vnd.ms-excel"],
   xlsx: [
@@ -40,6 +42,7 @@ const MSDocFTMaps = {
 };
 
 MSDocRenderer.fileTypes = [
+  ...MSDocFTMaps.odt,
   ...MSDocFTMaps.doc,
   ...MSDocFTMaps.docx,
   ...MSDocFTMaps.xls,
