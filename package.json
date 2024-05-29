@@ -5,7 +5,7 @@
  "author": "Matthew Mogford",
  "license": "ISC",
  "repository": {
-  "url": "https://github.com/laurawxy/react-doc-viewer"
+  "url": "git+https://github.com/laurawxy/react-doc-viewer.git"
  },
  "main": "build/index.js",
  "types": "build/index.d.ts",
@@ -61,5 +61,12 @@
    "last 1 firefox version",
    "last 1 safari version"
   ]
- }
+ },
+ "keywords": [
+  "doc"
+ ],
+ "bugs": {
+  "url": "https://github.com/laurawxy/react-doc-viewer/issues"
+ },
+ "homepage": "https://github.com/laurawxy/react-doc-viewer#readme"
 }
